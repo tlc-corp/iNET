@@ -62,7 +62,7 @@ class MainLogger extends \AttachableThreadedLogger{
 		$this->send($message, \LogLevel::CRITICAL, $name, TextFormat::RED);
 	}
 
-	public function error($message, $name = "ERR"){
+	public function error($message, $name = "ERROR"){
 		$this->send($message, \LogLevel::ERROR, $name, TextFormat::DARK_RED);
 	}
 
@@ -180,7 +180,7 @@ class MainLogger extends \AttachableThreadedLogger{
 			$threadName = (new \ReflectionClass($thread))->getShortName() . " thread";
 		}
 // Option 1: auto selected
-		$message = TextFormat::toANSI(TextFormat::AQUA . "" . date("H:i:s", $now) . " ". TextFormat::RESET . $color ."[" . $prefix . "] " . $message . TextFormat::RESET . "\n");
+		$message = TextFormat::toANSI(TextFormat::AQUA . "" . date("H:i:s", $now) . " ". TextFormat::RESET . $color ."[" . $prefix . "] " . $message . TextFormat::RESET . "");
 // Option 2: optional
 		//$message = TextFormat::toANSI(TextFormat::AQUA . "[" . date("H:i:s") . "] ". TextFormat::RESET . $color ."<".$prefix . ">" . " " . $message . TextFormat::RESET);
 		$cleanMessage = TextFormat::clean($message);
