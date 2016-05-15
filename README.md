@@ -11,9 +11,8 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
-# iNET
-
 [![Join the chat at https://gitter.im/thelucyclub/iNET](https://badges.gitter.im/thelucyclub/iNET.svg)](https://gitter.im/thelucyclub/iNET?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)<br>
+# iNET
 The fully-functional iServer for PHP! (Based off @PocketMine , @ClearSky , and @iTXTech Genisys)
 ## Test servers
 - IP: beta.hypixel-pe.tk
