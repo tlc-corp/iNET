@@ -1685,7 +1685,7 @@ class Server{
 		}
 
 		if(\pocketmine\DEBUG >= 0){
-			@cli_set_process_title($this->getName() . " " . $this->getPocketMineVersion());
+			@cli_set_process_title("iNET Server " . $this->getPocketMineVersion());
 		}
 
 		$this->logger->info($this->getLanguage()->translateString("pocketmine.server.networkStart", [$this->getIp() === "" ? "*" : $this->getIp(), $this->getPort()]));
