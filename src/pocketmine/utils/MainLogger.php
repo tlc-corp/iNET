@@ -78,7 +78,7 @@ class MainLogger extends \AttachableThreadedLogger{
 		$this->send($message, \LogLevel::INFO, $name, TextFormat::AQUA);
 	}
 
-	public function debug($message, $name = "DEBUG"){
+	public function debug($message, $name = "Debug"){
 		if($this->logDebug === false){
 			return;
 		}
@@ -173,14 +173,14 @@ class MainLogger extends \AttachableThreadedLogger{
 
 		$thread = \Thread::getCurrentThread();
 		if($thread === null){
-			$threadName = "Server thread";
+			$threadName = TextFormat::RED."system";
 		}elseif($thread instanceof Thread or $thread instanceof Worker){
-			$threadName = $thread->getThreadName() . " thread";
+			$threadName = TextFormat::BLUE.$thread->getThreadName() . "";
 		}else{
-			$threadName = (new \ReflectionClass($thread))->getShortName() . " thread";
+			$threadName = (new \ReflectionClass($thread))->getShortName() . "";
 		}
 
-		$message = TextFormat::toANSI(TextFormat::GRAY . " " . date("H:i:s", $now) . "  ". TextFormat::RESET . $color ."<" . $prefix . ">" . TextFormat::LIGHT_PURPLE . " " . $message . TextFormat::RESET);
+		$message = TextFormat::toANSI(TextFormat::GRAY . " " . date("H:i:s", $now) . "  " . $threadName . "> " . TextFormat::RESET . $color ."<" . $prefix . ">" . TextFormat::LIGHT_PURPLE . " " . $message . TextFormat::RESET);
 		//$message = TextFormat::toANSI(TextFormat::AQUA . "[" . date("H:i:s") . "] ". TextFormat::RESET . $color ."<".$prefix . ">" . " " . $message . TextFormat::RESET);
 		$cleanMessage = TextFormat::clean($message);
 
